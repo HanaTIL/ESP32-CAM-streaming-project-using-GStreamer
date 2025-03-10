@@ -1,14 +1,14 @@
 ESP32-CAM Streaming with GStreamer & DeepStream
 
-📌 Overview
+Overview
 
 This repository provides a modified version of the DeepStream Test1 application to support low-cost ESP32-CAM streaming. If you're looking to integrate an ESP32-CAM with NVIDIA DeepStream, this will help you handle its MJPEG compression, which differs from the H.264 format used in standard DeepStream pipelines.
 
-📷 Why Use ESP32-CAM?
+Why Use ESP32-CAM?
 
 The ESP32-CAM is an affordable, Wi-Fi-enabled camera module ideal for streaming applications. However, it natively encodes video in MJPEG format, while DeepStream expects H.264. This repository helps bridge that gap by providing a custom GStreamer pipeline to decode the MJPEG stream and integrate it into DeepStream.
 
-🚀 How It Works
+How It Works
 
 Run the ESP32-CAM RTSP server: First, upload an Arduino sketch to the ESP32-CAM to stream over RTSP in MJPEG format.
 
@@ -20,7 +20,7 @@ Replace DeepStream Test1 application: Copy the provided C file into:
 
 Compile & run the application to handle MJPEG streaming from ESP32-CAM.
 
-📌 Key Features
+Key Features
 
 Supports MJPEG decoding for ESP32-CAM streams.
 
@@ -30,7 +30,7 @@ Modifies DeepStream Test1 application to allow a single RTSP camera stream.
 
 Requires minimal setup beyond DeepStream dependencies.
 
-⚙️ Prerequisites
+Prerequisites
 
 Before using this, ensure that:
 
@@ -40,7 +40,7 @@ ESP32-CAM RTSP streaming is working (via Arduino sketch).
 
 You have installed the same dependencies required by DeepStream.
 
-📌 Installation & Usage
+Installation & Usage
 
 1️⃣ Set Up ESP32-CAM for RTSP Streaming
 
@@ -64,7 +64,7 @@ Copy the provided C file into:
 
 Then compile and run it.
 
-❗ Notes
+Notes
 
 This modification only supports one RTSP camera at a time.
 
