@@ -1,0 +1,77 @@
+ESP32-CAM Streaming with GStreamer & DeepStream
+
+Overview
+
+This repository provides a modified version of the DeepStream Test1 application to support low-cost ESP32-CAM streaming. If you're looking to integrate an ESP32-CAM with NVIDIA DeepStream, this will help you handle its MJPEG compression, which differs from the H.264 format used in standard DeepStream pipelines.
+
+Why Use ESP32-CAM?
+
+The ESP32-CAM is an affordable, Wi-Fi-enabled camera module ideal for streaming applications. However, it natively encodes video in MJPEG format, while DeepStream expects H.264. This repository helps bridge that gap by providing a custom GStreamer pipeline to decode the MJPEG stream and integrate it into DeepStream.
+
+How It Works
+
+Run the ESP32-CAM RTSP server: First, upload an Arduino sketch to the ESP32-CAM to stream over RTSP in MJPEG format.
+
+Ensure DeepStream is installed: Before modifying anything, make sure that DeepStream's default applications run correctly.
+
+Replace DeepStream Test1 application: Copy the provided C file into:
+
+/opt/nvidia/deepstream/deepstream/sources/apps/sample_apps/deepstream-test1/
+
+Compile & run the application to handle MJPEG streaming from ESP32-CAM.
+
+Key Features
+
+Supports MJPEG decoding for ESP32-CAM streams.
+
+Uses GStreamer to handle RTSP input and integrate it into DeepStream.
+
+Modifies DeepStream Test1 application to allow a single RTSP camera stream.
+
+Requires minimal setup beyond DeepStream dependencies.
+
+Prerequisites
+
+Before using this, ensure that:
+
+DeepStream is installed and its sample applications run correctly.
+
+ESP32-CAM RTSP streaming is working (via Arduino sketch).
+
+You have installed the same dependencies required by DeepStream.
+
+Installation & Usage
+
+1️⃣ Set Up ESP32-CAM for RTSP Streaming
+
+Upload an Arduino sketch that:
+
+Initializes the camera.
+
+Streams video over RTSP using MJPEG compression.
+
+2️⃣ Install Required Dependencies
+
+Make sure you have GStreamer and DeepStream dependencies installed:
+
+sudo apt update && sudo apt install -y gstreamer1.0-tools gstreamer1.0-plugins-bad gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly
+
+3️⃣ Replace DeepStream Test1 Code
+
+Copy the provided C file into:
+
+/opt/nvidia/deepstream/deepstream/sources/apps/sample_apps/deepstream-test1/
+
+Then compile and run it.
+
+Notes
+
+This modification only supports one RTSP camera at a time.
+
+Ensure that the original DeepStream test1 application runs successfully before using this modified version.
+
+DeepStream 7.1 introduces .yml configuration files for deep learning pipelines, but this project does not modify the AI-related parts—only the GStreamer pipeline.
+
+📜 License
+
+This project is open-source and provided as-is. Feel free to modify and improve it!
