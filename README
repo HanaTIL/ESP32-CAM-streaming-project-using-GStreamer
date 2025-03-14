@@ -1,6 +1,6 @@
 # ESP32-CAM Streaming with GStreamer & DeepStream
 
-# **Overview**
+## Overview
 
 This repository provides modified versions of the DeepStream Test1 and Test3 applications to support low-cost ESP32-CAM streaming. If you're looking to integrate ESP32-CAM with NVIDIA DeepStream, these modifications help handle its MJPEG compression, which differs from the H.264 format used in standard DeepStream pipelines.
 
@@ -8,7 +8,7 @@ Why Use ESP32-CAM?
 
 The ESP32-CAM is an affordable, Wi-Fi-enabled camera module ideal for streaming applications. However, it natively encodes video in MJPEG format, while DeepStream expects H.264. This repository bridges that gap by providing custom GStreamer pipelines to decode the MJPEG stream and integrate it into DeepStream.
 
-# **How It Works**
+## How It Works
 
 Run the ESP32-CAM RTSP server: First, upload an Arduino sketch to the ESP32-CAM to stream over RTSP in MJPEG format.
 
@@ -22,7 +22,7 @@ For multiple camera streams, replace deepstream_test3_app.c.
 
 Compile & run the modified application to handle MJPEG streaming from ESP32-CAM.
 
-# **Key Features**
+## Key Features
 
 Supports MJPEG decoding for ESP32-CAM streams.
 
@@ -34,7 +34,7 @@ Modifies DeepStream Test3 application to handle multiple RTSP camera streams.
 
 Requires minimal setup beyond DeepStream dependencies.
 
-# **Prerequisites**
+## Prerequisites
 
 Before using this, ensure that:
 
@@ -44,7 +44,7 @@ ESP32-CAM RTSP streaming is working (via Arduino sketch).
 
 You have installed the same dependencies required by DeepStream.
 
-# **Installation & Usage**
+## Installation & Usage
 
 1⃣ Set Up ESP32-CAM for RTSP Streaming
 
@@ -72,7 +72,7 @@ For multiple camera streaming: Copy deepstream_test3_app.c into:
 
 Then compile and run the application.
 
-# **Notes**
+## Notes
 
 The Test1 modification supports only one RTSP camera at a time.
 
@@ -82,7 +82,7 @@ Ensure that the original DeepStream applications run successfully before using t
 
 DeepStream 7.1 introduces .yml configuration files for deep learning pipelines, but this project does not modify the AI-related parts—only the GStreamer pipeline.
 
-# **License**
+## License
 
 This project is open-source and provided as-is. Feel free to modify and improve it!
 
