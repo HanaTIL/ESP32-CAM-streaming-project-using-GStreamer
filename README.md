@@ -1,4 +1,4 @@
- __ESP32-CAM Streaming with GStreamer & DeepStream __
+**ESP32-CAM Streaming with GStreamer & DeepStream**
 
 **Overview**
 
