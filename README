@@ -1,6 +1,6 @@
 # **ESP32-CAM Streaming with GStreamer & DeepStream**
 
-## Overview
+## **Overview**
 
 This repository provides modified versions of the DeepStream Test1 and Test3 applications to support low-cost ESP32-CAM streaming. If you're looking to integrate ESP32-CAM with NVIDIA DeepStream, these modifications help handle its MJPEG compression, which differs from the H.264 format used in standard DeepStream pipelines.
 
